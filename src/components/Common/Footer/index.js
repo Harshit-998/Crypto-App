@@ -20,7 +20,7 @@ function Footer() {
         <Link to="https://facebook.com">
           <FacebookIcon className="social-link" />
         </Link>
-        <Link to="mailto:avivashishta@gmail.com">
+        <Link to="mailto:harshityadav0767@gmail.com">
           <EmailIcon className="social-link" />
         </Link>
         <Link to="https://www.twitter.com">

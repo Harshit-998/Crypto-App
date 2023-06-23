@@ -1,16 +1,17 @@
-import axios from "axios"
+import axios from "axios";
 
-export function getCoinPrices(id, days, priceType){
-    
-    const prices = axios.get(`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=${days}&interval=daily`)
-    .then((response) =>{
+export function getCoinPrices(id, days, priceType) {
+  const prices = axios
+    .get(
+      `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=${days}&interval=daily`
+    )
+    .then((response) => {
       console.log("Prices>>>", response.data);
       return response.data[priceType];
     })
-    .catch((error) =>{
+    .catch((error) => {
       console.log("Error>>>", error);
     });
 
-    return prices;
-  
+  return prices;
 }

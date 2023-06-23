@@ -1,25 +1,28 @@
-import React  from 'react'
+import React from "react";
 import "./styles.css";
-import TrendingUpRoundedIcon from '@mui/icons-material/TrendingUpRounded';
-import TrendingDownRoundedIcon from '@mui/icons-material/TrendingDownRounded';
-import Tooltip from '@mui/material/Tooltip';
+import TrendingUpRoundedIcon from "@mui/icons-material/TrendingUpRounded";
+import TrendingDownRoundedIcon from "@mui/icons-material/TrendingDownRounded";
+import Tooltip from "@mui/material/Tooltip";
 import { convertNumber } from "../../../functions/convertNumbers";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-
-
-
 
 function List({ coin }) {
   return (
     <Link to={`/coin/${coin.id}`}>
-      <motion.tr className="list-row"
-      initial={{ opacity: 0, x: -50 }}
-    whileInView={{ opacity: 1, x: 0 }}
-    transition={{ duration: 0.5 }}>
+      <motion.tr
+        className="list-row"
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}
+      >
         <Tooltip title="Coin Logo">
           <td className="td-image">
-            <img src={coin.image} className="coin-logo td-coin-logo" alt={coin.name} />
+            <img
+              src={coin.image}
+              className="coin-logo td-coin-logo"
+              alt={coin.name}
+            />
           </td>
         </Tooltip>
         <Tooltip title="Coin Info" placement="bottom-start">
@@ -93,4 +96,3 @@ function List({ coin }) {
 }
 
 export default List;
-
